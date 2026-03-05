@@ -44,6 +44,15 @@ const Navbar: React.FC = () => {
             <Nav.Link as={NavLink} to="/experiences" className="nav-link-custom">
               Experiences
             </Nav.Link>
+            <Nav.Link as={NavLink} to="/accommodation" className="nav-link-custom">
+              Accommodation
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/transport" className="nav-link-custom">
+              Transport
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/packages" className="nav-link-custom">
+              Packages
+            </Nav.Link>
             <Nav.Link as={NavLink} to="/about" className="nav-link-custom">
               About
             </Nav.Link>
@@ -65,6 +74,15 @@ const Navbar: React.FC = () => {
               </Nav.Link>
               <Nav.Link as={NavLink} to="/experiences" onClick={handleClose} className="fs-5">
                 Experiences
+              </Nav.Link>
+              <Nav.Link as={NavLink} to="/accommodation" onClick={handleClose} className="fs-5">
+                Accommodation
+              </Nav.Link>
+              <Nav.Link as={NavLink} to="/transport" onClick={handleClose} className="fs-5">
+                Transport
+              </Nav.Link>
+              <Nav.Link as={NavLink} to="/packages" onClick={handleClose} className="fs-5">
+                Packages
               </Nav.Link>
               <Nav.Link as={NavLink} to="/about" onClick={handleClose} className="fs-5">
                 About

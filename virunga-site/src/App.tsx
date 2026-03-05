@@ -6,6 +6,12 @@ import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
 import ExperiencesPage from './pages/ExperiencesPage';
 import ExperienceDetailPage from './pages/ExperienceDetailPage';
+import TransportPage from './pages/TransportPage';
+import TransportDetailPage from './pages/TransportDetailPage';
+import AccommodationPage from './pages/AccommodationPage';
+import AccommodationDetailPage from './pages/AccommodationDetailPage';
+import PackagesPage from './pages/PackagesPage';
+import PackageDetailPage from './pages/PackageDetailPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 
@@ -24,6 +30,12 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/experiences" element={<ExperiencesPage />} />
               <Route path="/experiences/:slug" element={<ExperienceDetailPage />} />
+              <Route path="/transport" element={<TransportPage />} />
+              <Route path="/transport/:slug" element={<TransportDetailPage />} />
+              <Route path="/accommodation" element={<AccommodationPage />} />
+              <Route path="/accommodation/:slug" element={<AccommodationDetailPage />} />
+              <Route path="/packages" element={<PackagesPage />} />
+              <Route path="/packages/:slug" element={<PackageDetailPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
             </Routes>

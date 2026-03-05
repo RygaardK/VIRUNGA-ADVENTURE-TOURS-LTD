@@ -229,6 +229,74 @@ const HomePage: React.FC = () => {
         </Container>
       </section>
 
+      {/* Plan Your Trip */}
+      <section className="py-5">
+        <Container>
+          <div className="text-center mb-5">
+            <h2 className="display-6 fw-bold mb-3">Plan Your Trip</h2>
+            <p className="text-muted fs-5 mx-auto" style={{ maxWidth: '600px' }}>
+              Everything you need for an unforgettable Kisoro adventure — activities, places to stay,
+              and reliable transport.
+            </p>
+          </div>
+          <Row className="gy-4">
+            {[
+              {
+                icon: '🎒',
+                title: 'Activities & Experiences',
+                description:
+                  'Gorilla trekking, volcano hiking, golden monkey tracking, cultural tours, and more. Over 11 unique adventures to choose from.',
+                link: '/experiences',
+                linkText: 'Browse Activities',
+                color: 'success',
+              },
+              {
+                icon: '🏨',
+                title: 'Accommodation',
+                description:
+                  'Luxury lodges, eco camps, and budget hostels near Bwindi, Lake Mutanda, and Kisoro town. Low season and bundle discounts available.',
+                link: '/accommodation',
+                linkText: 'Find a Place to Stay',
+                color: 'warning',
+              },
+              {
+                icon: '🚗',
+                title: 'Transport',
+                description:
+                  '4x4 safari cars, boda-boda motorcycles, and boat transport. Airport transfers from Entebbe, Kampala, and Kigali.',
+                link: '/transport',
+                linkText: 'View Transport Options',
+                color: 'info',
+              },
+            ].map((item, index) => (
+              <Col lg={4} md={6} key={index}>
+                <Card className="border-0 shadow-sm h-100 rounded-3 text-center p-3">
+                  <Card.Body className="d-flex flex-column">
+                    <div className="fs-1 mb-3">{item.icon}</div>
+                    <Card.Title className="fw-bold mb-3">{item.title}</Card.Title>
+                    <Card.Text className="text-muted small flex-grow-1">{item.description}</Card.Text>
+                    <Link
+                      to={item.link}
+                      className={`btn btn-outline-${item.color} rounded-pill mt-3 fw-semibold`}
+                    >
+                      {item.linkText} <FiArrowRight />
+                    </Link>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+          <div className="text-center mt-4">
+            <Link
+              to="/packages"
+              className="btn btn-success btn-lg rounded-pill px-5 fw-semibold d-inline-flex align-items-center gap-2"
+            >
+              View Tour Packages <FiArrowRight />
+            </Link>
+          </div>
+        </Container>
+      </section>
+
       {/* Booking CTA */}
       <section className="py-5 bg-light">
         <Container>

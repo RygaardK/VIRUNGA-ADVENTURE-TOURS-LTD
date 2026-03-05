@@ -29,6 +29,30 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li className="mb-2">
+                <Link
+                  to="/accommodation"
+                  className="text-light text-decoration-none opacity-75 footer-link"
+                >
+                  Accommodation
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link
+                  to="/transport"
+                  className="text-light text-decoration-none opacity-75 footer-link"
+                >
+                  Transport
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link
+                  to="/packages"
+                  className="text-light text-decoration-none opacity-75 footer-link"
+                >
+                  Tour Packages
+                </Link>
+              </li>
+              <li className="mb-2">
                 <Link to="/about" className="text-light text-decoration-none opacity-75 footer-link">
                   About Us
                 </Link>
