@@ -1,0 +1,145 @@
+/* ===========================
+   VIRUNGA ADVENTURE TOURS
+   Custom Styles
+   =========================== */
+
+/* ----- General ----- */
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ----- Navbar ----- */
+.navbar-custom {
+  transition: all 0.3s ease;
+}
+
+.navbar-custom .brand-text {
+  color: #2d6a4f;
+  font-size: 1.1rem;
+}
+
+.nav-link-custom {
+  font-weight: 500;
+  color: #555 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 2rem;
+  transition: all 0.2s ease;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+  color: #2d6a4f !important;
+  background-color: rgba(45, 106, 79, 0.08);
+}
+
+/* ----- Hero Section ----- */
+.hero-section {
+  min-height: 85vh;
+  position: relative;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+/* ----- Page Headers ----- */
+.page-header {
+  margin-top: 0;
+}
+
+/* ----- Experience Cards ----- */
+.experience-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12) !important;
+}
+
+.card-img-custom {
+  height: 220px;
+  object-fit: cover;
+}
+
+/* ----- Experience Details Hero ----- */
+.experience-hero-img {
+  height: 450px;
+  object-fit: cover;
+}
+
+.experience-hero-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* ----- Footer ----- */
+.footer-link:hover {
+  opacity: 1 !important;
+  text-decoration: underline !important;
+}
+
+/* ----- Booking CTA ----- */
+.booking-cta {
+  background: linear-gradient(135deg, #2d6a4f 0%, #1b4332 100%) !important;
+}
+
+/* ----- Responsive Adjustments ----- */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 70vh;
+  }
+
+  .experience-hero-img {
+    height: 280px;
+  }
+
+  .display-3 {
+    font-size: 2.2rem;
+  }
+
+  .display-5 {
+    font-size: 1.8rem;
+  }
+
+  .display-6 {
+    font-size: 1.5rem;
+  }
+
+  .navbar-custom .brand-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-img-custom {
+    height: 180px;
+  }
+}
+
+/* ----- Smooth Scroll ----- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ----- Selection Color ----- */
+::selection {
+  background-color: #2d6a4f;
+  color: #fff;
+}
