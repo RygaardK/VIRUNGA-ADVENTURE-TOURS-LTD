@@ -1,102 +1,230 @@
-# VIRUNGA ADVENTURE TOURS LTD
-## Copilot Instructions
-You are a senior full-stack developer and travel website designer.
+# Copilot Instructions – TravelToKisoro / Virunga Adventure Tours
 
-We are building a tourism website for:
+You are assisting in building a tourism website for:
 
 Virunga Adventure Tours Ltd
 Location: Kisoro, Uganda
 
-The site is built with:
+The website promotes tourism activities around:
 
-React + TypeScript + Bootstrap
+* Bwindi Impenetrable National Park
+* Mgahinga Gorilla National Park
+* Lake Mutanda
+* Kisoro Town
 
-The website already contains tourism experiences.
+The main purpose of the website is to help international travelers discover experiences and contact the company to book tours.
 
-Now we want to expand the website with:
+---
 
-• Accommodation listings
-• Transportation services
-• Tour package combinations
+# Tech Stack
 
-Use the data files in the project:
+Use the following technologies:
 
+React
+TypeScript
+Bootstrap 5
+
+Rules:
+
+* Use functional React components
+* Use TypeScript interfaces
+* Keep components reusable
+* Keep styling minimal and Bootstrap-based
+* Do not introduce complex libraries unless necessary
+* No backend or database for now (static data only)
+
+---
+
+# Project Data Structure
+
+Tourism data is stored in:
+
+/data
+
+Files may include:
+
+experiences.ts
 accommodations.ts
 transport.ts
-experiences.ts
+packages.ts
 
-Tasks:
+Each file exports typed objects.
 
-1. Create a new page called **Transport** that explains transportation options.
+Example pattern:
 
-Show:
+```ts
+export interface Experience {
+  id: string
+  name: string
+  slug: string
+  description: string
+  location: string
+  duration: string
+  priceFrom: number
+}
+```
 
-* Bodaboda transport
-* 4x4 safari car with driver
-* Boat transport
+Always keep data structured and easy to expand later.
 
-Each transport type should display:
+---
 
-name
+# Design Guidelines
+
+The site should look like a modern travel website.
+
+Design goals:
+
+clean
+modern
+nature inspired
+mobile friendly
+
+Colors should reflect:
+
+* green (nature / jungle)
+* earth tones
+* clean white backgrounds
+
+Avoid overly complex styling.
+
+---
+
+# SEO Requirements
+
+SEO is extremely important.
+
+Every page must include:
+
+SEO title
+SEO description
+keyword suggestions
+
+Target keywords include:
+
+Kisoro tourism
+Things to do in Kisoro
+Bwindi gorilla trekking
+Mgahinga hiking
+Lake Mutanda canoeing
+Uganda gorilla tours
+
+Descriptions should be written for international travelers.
+
+---
+
+# Content Writing Style
+
+Write content that sounds:
+
+professional
+inspiring
+friendly
+adventurous
+
+The audience is:
+
+international tourists visiting Uganda and Rwanda.
+
+Descriptions should make travelers excited about visiting Kisoro.
+
+---
+
+# Experiences
+
+The website lists tourism activities such as:
+
+Gorilla trekking
+Golden monkey tracking
+Volcano hiking
+Coffee experience
+Cultural tours
+Batwa trail
+Nature walks
+Bike tours
+Canoeing and boat tours
+Kigali city tours
+
+Each experience page must include:
+
+hero image placeholder
 description
-pricing model
-driver information
-fuel included
-cross-border support
-airport pickup options
-
-2. Create a new page called **Accommodation**
-
-List partner accommodations:
-
-Ichumbi Gorilla Lodge
-Mutanda Eco Community Centre
-Golden Monkey Guesthouse
-
-Each accommodation card should show:
-
-name
-type (luxury / eco lodge / hostel)
+duration
 location
-season pricing rules
-bundle discount information
+what is included
+transport options
+estimated price
+booking contact section
 
-3. Create a **Tour Package Builder**
+---
 
-Combine:
+# Accommodation
 
-experience + transport + accommodation
+Partner accommodations include:
 
-Example packages:
+Ichumbi Gorilla Lodge (luxury lodge)
+Mutanda Eco Community Centre (lake eco lodge)
+Golden Monkey Guesthouse (budget hostel)
 
-3 Day Gorilla Trekking Package
-Lake Mutanda Adventure Package
-Mgahinga Volcano Hiking Package
+Low season discount: 30%
 
-4. Add SEO optimized content for these pages targeting:
+Bundle discount when booking tours + accommodation: 10%
 
-Kisoro accommodation
-Bwindi gorilla trekking lodge
-Lake Mutanda hotels
-Transport from Kigali to Kisoro
-Transport from Entebbe to Bwindi
+---
 
-5. Create reusable components:
+# Transport Services
 
+Transport options include:
+
+Bodaboda motorcycle transport
+4x4 safari car with driver
+Boat transport on Lake Mutanda
+
+Airport pickups available from:
+
+Entebbe
+Kampala
+Kigali
+
+Cross-border transport between Uganda and Rwanda is supported.
+
+---
+
+# Component Guidelines
+
+Prefer reusable components.
+
+Examples:
+
+ExperienceCard
 TransportCard
 AccommodationCard
 PackageCard
+BookingCTA
+Navbar
+Footer
 
-6. Add a section on the homepage called:
+---
 
-"Plan Your Trip"
+# Future Features (keep compatibility)
 
-Where users can see:
+The site may later include:
 
-Activities
-Accommodation
-Transport
+tour booking system
+price calculator
+package builder
+admin dashboard
 
-7. Make sure the site remains mobile-friendly and modern.
+Structure code so these features can be added easily.
 
-8. Improve descriptions so the website appeals to international travelers.
+---
+
+# General Rule
+
+Always prioritize:
+
+clean code
+SEO optimized content
+clear tourism information
+reusable React components
+
+The website should feel like a professional African safari tourism website.
