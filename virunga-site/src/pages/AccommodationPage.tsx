@@ -1,7 +1,18 @@
 import { Container, Row, Col, Card, Badge } from 'react-bootstrap';
+import {
+  FaLeaf,
+  FaSuitcase,
+  FaSun,
+  FaUtensils,
+  FaSeedling,
+  FaHandshake,
+  FaWifi,
+  FaLock,
+} from 'react-icons/fa';
 import SEOHead from '../components/SEOHead';
 import AccommodationCard from '../components/AccommodationCard';
 import BookingCTA from '../components/BookingCTA';
+import WhatsAppButton from '../components/WhatsAppButton';
 import {
   accommodations,
   accommodationInfo,
@@ -81,7 +92,7 @@ const AccommodationPage: React.FC = () => {
                           className="bg-success bg-opacity-10 rounded-3 d-flex align-items-center justify-content-center"
                           style={{ width: '56px', height: '56px' }}
                         >
-                          <span style={{ fontSize: '1.5rem' }}>🌿</span>
+                          <span style={{ fontSize: '1.5rem' }}><FaLeaf className="text-success" /></span>
                         </div>
                         <div>
                           <h4 className="mb-0 fw-bold">Low Season Discount</h4>
@@ -106,7 +117,7 @@ const AccommodationPage: React.FC = () => {
                           className="bg-warning bg-opacity-10 rounded-3 d-flex align-items-center justify-content-center"
                           style={{ width: '56px', height: '56px' }}
                         >
-                          <span style={{ fontSize: '1.5rem' }}>🎒</span>
+                          <span style={{ fontSize: '1.5rem' }}><FaSuitcase className="text-warning" /></span>
                         </div>
                         <div>
                           <h4 className="mb-0 fw-bold">Bundle Discount</h4>
@@ -141,12 +152,12 @@ const AccommodationPage: React.FC = () => {
               </div>
               <Row className="g-3">
                 {[
-                  { icon: '🌄', title: 'Stunning Views', description: 'Wake up to views of the Virunga Volcanoes and Bwindi forests.' },
-                  { icon: '🍽️', title: 'Local Cuisine', description: 'Home-cooked Ugandan meals with fresh ingredients sourced locally.' },
-                  { icon: '🌿', title: 'Eco-Friendly', description: 'Most properties use solar energy and support community projects.' },
-                  { icon: '🤝', title: 'Warm Hospitality', description: 'Friendly, English-speaking staff ready to make your stay memorable.' },
-                  { icon: '📶', title: 'Basic WiFi', description: 'Most lodges offer basic WiFi. Expect limited connectivity in rural areas.' },
-                  { icon: '🔒', title: 'Secure & Safe', description: 'All accommodations are in safe locations with secure premises.' },
+                  { icon: <FaSun className="text-warning" />, title: 'Stunning Views', description: 'Wake up to views of the Virunga Volcanoes and Bwindi forests.' },
+                  { icon: <FaUtensils className="text-success" />, title: 'Local Cuisine', description: 'Home-cooked Ugandan meals with fresh ingredients sourced locally.' },
+                  { icon: <FaSeedling className="text-success" />, title: 'Eco-Friendly', description: 'Most properties use solar energy and support community projects.' },
+                  { icon: <FaHandshake className="text-primary" />, title: 'Warm Hospitality', description: 'Friendly, English-speaking staff ready to make your stay memorable.' },
+                  { icon: <FaWifi className="text-info" />, title: 'Basic WiFi', description: 'Most lodges offer basic WiFi. Expect limited connectivity in rural areas.' },
+                  { icon: <FaLock className="text-dark" />, title: 'Secure & Safe', description: 'All accommodations are in safe locations with secure premises.' },
                 ].map((item, index) => (
                   <Col sm={6} key={index}>
                     <div className="d-flex gap-3 p-3 bg-light rounded-3">
@@ -161,6 +172,22 @@ const AccommodationPage: React.FC = () => {
               </Row>
             </Col>
           </Row>
+        </Container>
+      </section>
+
+      {/* WhatsApp CTA */}
+      <section className="py-5">
+        <Container className="text-center">
+          <h3 className="fw-bold mb-3">Need Help Choosing Where to Stay?</h3>
+          <p className="text-muted mb-4 mx-auto" style={{ maxWidth: '550px' }}>
+            Tell us your travel dates and budget on WhatsApp and we will find the perfect
+            accommodation for your Kisoro adventure.
+          </p>
+          <WhatsAppButton
+            message="Hello! I am looking for accommodation in Kisoro for my upcoming trip. Could you recommend options based on my dates and budget?"
+            label="Ask About Accommodation"
+            size="lg"
+          />
         </Container>
       </section>
 

@@ -1,7 +1,16 @@
 import { Container, Row, Col } from 'react-bootstrap';
+import {
+  FaHotel,
+  FaCar,
+  FaUtensils,
+  FaHiking,
+  FaPlane,
+  FaHeadset,
+} from 'react-icons/fa';
 import SEOHead from '../components/SEOHead';
 import PackageCard from '../components/PackageCard';
 import BookingCTA from '../components/BookingCTA';
+import WhatsAppButton from '../components/WhatsAppButton';
 import { tourPackages } from '../data/packages';
 
 const PackagesPage: React.FC = () => {
@@ -67,12 +76,12 @@ const PackagesPage: React.FC = () => {
               </div>
               <Row className="g-3">
                 {[
-                  { icon: '🏨', text: 'Accommodation at partner lodges' },
-                  { icon: '🚗', text: '4x4 transport with English-speaking driver' },
-                  { icon: '🍽️', text: 'Meals as per itinerary (B/L/D)' },
-                  { icon: '🎒', text: 'All guided activities and park fees' },
-                  { icon: '🛬', text: 'Airport transfers (optional)' },
-                  { icon: '📞', text: '24/7 trip support' },
+                  { icon: <FaHotel className="text-success" />, text: 'Accommodation at partner lodges' },
+                  { icon: <FaCar className="text-success" />, text: '4x4 transport with English-speaking driver' },
+                  { icon: <FaUtensils className="text-success" />, text: 'Meals as per itinerary (B/L/D)' },
+                  { icon: <FaHiking className="text-success" />, text: 'All guided activities and park fees' },
+                  { icon: <FaPlane className="text-success" />, text: 'Airport transfers (optional)' },
+                  { icon: <FaHeadset className="text-success" />, text: '24/7 trip support' },
                 ].map((item, i) => (
                   <Col sm={6} key={i}>
                     <div className="d-flex gap-3 p-3 bg-white rounded-3 shadow-sm">
@@ -98,9 +107,16 @@ const PackagesPage: React.FC = () => {
                 Whether you want to combine gorilla trekking with a Kigali city tour or add extra
                 nights at Lake Mutanda, we will make it happen.
               </p>
-              <a href="/contact" className="btn btn-success btn-lg px-5 rounded-pill">
-                Request a Custom Package
-              </a>
+              <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                <a href="/contact" className="btn btn-outline-success btn-lg px-5 rounded-pill">
+                  Request via Email
+                </a>
+                <WhatsAppButton
+                  message="Hello! I would like to create a custom tour package with Virunga Adventure Tours. I am interested in combining activities, accommodation, and transport. Could you help me plan?"
+                  label="Request via WhatsApp"
+                  size="lg"
+                />
+              </div>
             </Col>
           </Row>
         </Container>

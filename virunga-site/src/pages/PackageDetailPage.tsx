@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Container, Row, Col, Card, Badge, Breadcrumb } from 'react-bootstrap';
 import SEOHead from '../components/SEOHead';
 import BookingCTA from '../components/BookingCTA';
+import WhatsAppButton, { whatsappMessages } from '../components/WhatsAppButton';
 import { getPackageBySlug } from '../data/packages';
 
 const PackageDetailPage: React.FC = () => {
@@ -66,7 +67,13 @@ const PackageDetailPage: React.FC = () => {
               </div>
               <h1 className="display-5 fw-bold mb-2">{pkg.name}</h1>
               <p className="fs-6 opacity-75 mb-3">{pkg.subtitle}</p>
-              <p className="opacity-75">{pkg.description}</p>
+              <p className="opacity-75 mb-3">{pkg.description}</p>
+              <WhatsAppButton
+                message={whatsappMessages.tourPackage(pkg.name)}
+                label="Book This Package"
+                variant="light"
+                size="lg"
+              />
             </Col>
             <Col lg={4} className="text-lg-end mt-4 mt-lg-0">
               <div className="bg-white bg-opacity-10 rounded-3 p-4 d-inline-block">

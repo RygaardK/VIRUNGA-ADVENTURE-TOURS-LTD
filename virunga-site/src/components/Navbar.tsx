@@ -11,19 +11,18 @@ const Navbar: React.FC = () => {
   const handleShow = () => setShowOffcanvas(true);
 
   return (
-    <BSNavbar expand="lg" fixed="top" className="navbar-custom bg-white shadow-sm py-2">
+    <BSNavbar expand="lg" fixed="top" className="navbar-custom p-0 bg-white shadow-sm">
       <Container>
-        <BSNavbar.Brand as={Link} to="/" className="fw-bold text-success fs-5">
+        <BSNavbar.Brand as={Link} to="/" className="fw-bold text-success fs-5 py-2">
           <img
             src="/images/logo.png"
             alt={COMPANY_INFO.name}
-            height="40"
+            height="65"
             className="d-inline-block align-top me-2"
             onError={(e) => {
               (e.target as HTMLImageElement).style.display = 'none';
             }}
           />
-          <span className="brand-text">Virunga Adventure Tours</span>
         </BSNavbar.Brand>
 
         <button

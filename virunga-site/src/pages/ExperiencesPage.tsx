@@ -1,17 +1,18 @@
 import { useState } from 'react';
 import { Container, Row, Col, Form, InputGroup } from 'react-bootstrap';
 import { FiSearch } from 'react-icons/fi';
+import { FaPaw, FaMountain, FaTheaterMasks, FaLeaf, FaCity } from 'react-icons/fa';
 import SEOHead from '../components/SEOHead';
 import ExperienceCard from '../components/ExperienceCard';
 import { experiences, type Experience } from '../data/experiences';
 
-const categories: { value: string; label: string }[] = [
-  { value: 'all', label: 'All Experiences' },
-  { value: 'wildlife', label: '🦍 Wildlife' },
-  { value: 'adventure', label: '🏔️ Adventure' },
-  { value: 'cultural', label: '🎭 Cultural' },
-  { value: 'nature', label: '🌿 Nature' },
-  { value: 'city', label: '🏙️ City' },
+const categories: { value: string; label: string; icon: React.ReactNode }[] = [
+  { value: 'all', label: 'All Experiences', icon: null },
+  { value: 'wildlife', label: 'Wildlife', icon: <FaPaw className="me-1" /> },
+  { value: 'adventure', label: 'Adventure', icon: <FaMountain className="me-1" /> },
+  { value: 'cultural', label: 'Cultural', icon: <FaTheaterMasks className="me-1" /> },
+  { value: 'nature', label: 'Nature', icon: <FaLeaf className="me-1" /> },
+  { value: 'city', label: 'City', icon: <FaCity className="me-1" /> },
 ];
 
 const ExperiencesPage: React.FC = () => {
@@ -75,7 +76,7 @@ const ExperiencesPage: React.FC = () => {
                     }`}
                     onClick={() => setActiveCategory(cat.value)}
                   >
-                    {cat.label}
+                    {cat.icon}{cat.label}
                   </button>
                 ))}
               </div>

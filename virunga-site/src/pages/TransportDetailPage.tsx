@@ -1,8 +1,16 @@
 import { useParams, Link } from 'react-router-dom';
 import { Container, Row, Col, Card, Badge, Breadcrumb } from 'react-bootstrap';
+import { FaMotorcycle, FaCar, FaShip } from 'react-icons/fa';
 import SEOHead from '../components/SEOHead';
 import BookingCTA from '../components/BookingCTA';
+import WhatsAppButton, { whatsappMessages } from '../components/WhatsAppButton';
 import { getTransportBySlug } from '../data/transport';
+
+const transportIconMap: Record<string, React.ReactNode> = {
+  motorcycle: <FaMotorcycle />,
+  car: <FaCar />,
+  ship: <FaShip />,
+};
 
 const TransportDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -51,15 +59,21 @@ const TransportDetailPage: React.FC = () => {
         <section className="bg-success text-white rounded-3 p-5 mb-5">
           <Row className="align-items-center">
             <Col lg={8}>
-              <span style={{ fontSize: '3rem' }}>{transport.icon}</span>
+              <span style={{ fontSize: '3rem' }}>{transportIconMap[transport.icon] || transport.icon}</span>
               <h1 className="display-5 fw-bold mt-2 mb-3">{transport.name}</h1>
               <p className="fs-5 opacity-75 mb-3">{transport.description}</p>
-              <div className="d-flex flex-wrap gap-2">
+              <div className="d-flex flex-wrap gap-2 mb-3">
                 {transport.fuelIncluded && <Badge bg="light" text="dark">Fuel Included</Badge>}
                 {transport.englishDriver && <Badge bg="light" text="dark">English Driver</Badge>}
                 {transport.crossBorder && <Badge bg="warning" text="dark">Cross-Border Available</Badge>}
                 {transport.driverIncluded && <Badge bg="light" text="dark">Driver Included</Badge>}
               </div>
+              <WhatsAppButton
+                message={whatsappMessages.transport(transport.name)}
+                label="Book This Transport"
+                variant="light"
+                size="lg"
+              />
             </Col>
             <Col lg={4} className="text-lg-end mt-4 mt-lg-0">
               <div className="bg-white bg-opacity-10 rounded-3 p-4 d-inline-block">

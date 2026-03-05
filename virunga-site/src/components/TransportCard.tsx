@@ -1,7 +1,14 @@
 import { Card, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FiCheck, FiX, FiGlobe, FiDollarSign } from 'react-icons/fi';
+import { FaMotorcycle, FaCar, FaShip } from 'react-icons/fa';
 import type { TransportService } from '../data/transport';
+
+const transportIconMap: Record<string, React.ReactNode> = {
+  motorcycle: <FaMotorcycle />,
+  car: <FaCar />,
+  ship: <FaShip />,
+};
 
 interface TransportCardProps {
   transport: TransportService;
@@ -20,7 +27,7 @@ const TransportCard: React.FC<TransportCardProps> = ({ transport }) => {
             (e.target as HTMLImageElement).src = `https://placehold.co/800x500/1b4332/ffffff?text=${encodeURIComponent(transport.name)}`;
           }}
         />
-        <div className="position-absolute top-0 start-0 m-3 fs-2">{transport.icon}</div>
+        <div className="position-absolute top-0 start-0 m-3 fs-2 text-white" style={{ filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.5))' }}>{transportIconMap[transport.icon] || transport.icon}</div>
       </div>
       <Card.Body className="d-flex flex-column p-4">
         <Card.Title className="fw-bold mb-2">{transport.name}</Card.Title>

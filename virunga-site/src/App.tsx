@@ -14,6 +14,7 @@ import PackagesPage from './pages/PackagesPage';
 import PackageDetailPage from './pages/PackageDetailPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import WhatsAppButton from './components/WhatsAppButton';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -41,6 +42,7 @@ function App() {
             </Routes>
           </main>
           <Footer />
+          <WhatsAppButton floating />
         </div>
       </Router>
     </HelmetProvider>

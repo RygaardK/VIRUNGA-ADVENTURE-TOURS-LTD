@@ -13,6 +13,7 @@ import {
 import type { Experience } from '../data/experiences';
 import TransportOptions from './TransportOptions';
 import BookingCTA from './BookingCTA';
+import WhatsAppButton, { whatsappMessages } from './WhatsAppButton';
 
 interface ExperienceDetailsProps {
   experience: Experience;
@@ -170,6 +171,15 @@ const ExperienceDetails: React.FC<ExperienceDetailsProps> = ({ experience }) => 
           </div>
         </Col>
       </Row>
+
+      {/* WhatsApp Quick Book */}
+      <div className="text-center my-4">
+        <WhatsAppButton
+          message={whatsappMessages.experience(experience.title)}
+          label={`Book ${experience.title} via WhatsApp`}
+          size="lg"
+        />
+      </div>
 
       {/* Booking CTA */}
       <div className="mt-5">

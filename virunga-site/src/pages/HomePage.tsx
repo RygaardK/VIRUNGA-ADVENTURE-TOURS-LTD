@@ -1,6 +1,17 @@
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiMapPin, FiUsers, FiAward, FiStar } from 'react-icons/fi';
+import {
+  FaPaw,
+  FaGlobeAfrica,
+  FaBullseye,
+  FaComments,
+  FaMountain,
+  FaCheckCircle,
+  FaHiking,
+  FaHotel,
+  FaCar,
+} from 'react-icons/fa';
 import SEOHead from '../components/SEOHead';
 import ExperienceCard from '../components/ExperienceCard';
 import BookingCTA from '../components/BookingCTA';
@@ -154,32 +165,32 @@ const HomePage: React.FC = () => {
           <Row className="gy-4">
             {[
               {
-                icon: '🦍',
+                icon: <FaPaw />,
                 title: 'Local Expertise',
                 text: 'Based in Kisoro, we have unmatched knowledge of Bwindi, Mgahinga, and the entire Virunga region. Our guides are born and raised here.',
               },
               {
-                icon: '🌍',
+                icon: <FaGlobeAfrica />,
                 title: 'Responsible Tourism',
                 text: 'We work directly with local communities, ensuring tourism benefits reach the people who make these experiences possible.',
               },
               {
-                icon: '🎯',
+                icon: <FaBullseye />,
                 title: 'Customised Itineraries',
                 text: 'Every traveller is different. We tailor each experience to your interests, budget, and schedule — from budget backpacker to luxury safari.',
               },
               {
-                icon: '💬',
+                icon: <FaComments />,
                 title: 'Personal Service',
                 text: 'From your first inquiry to your last day, you\'ll communicate directly with our team. No call centres, no middlemen — just genuine hospitality.',
               },
               {
-                icon: '🏔️',
+                icon: <FaMountain />,
                 title: 'Unique Access',
                 text: 'Our local connections give you access to experiences you won\'t find in guidebooks — from hidden trails to private community visits.',
               },
               {
-                icon: '✅',
+                icon: <FaCheckCircle />,
                 title: 'All-Inclusive Options',
                 text: 'We handle permits, guides, transport, accommodation, and meals — so you can focus on enjoying the adventure.',
               },
@@ -187,7 +198,7 @@ const HomePage: React.FC = () => {
               <Col lg={4} md={6} key={index}>
                 <Card className="border-0 shadow-sm h-100 rounded-3 p-3">
                   <Card.Body className="text-center">
-                    <div className="fs-1 mb-3">{item.icon}</div>
+                    <div className="fs-1 mb-3 text-success">{item.icon}</div>
                     <Card.Title className="fw-bold">{item.title}</Card.Title>
                     <Card.Text className="text-muted small">{item.text}</Card.Text>
                   </Card.Body>
@@ -242,7 +253,7 @@ const HomePage: React.FC = () => {
           <Row className="gy-4">
             {[
               {
-                icon: '🎒',
+                icon: <FaHiking />,
                 title: 'Activities & Experiences',
                 description:
                   'Gorilla trekking, volcano hiking, golden monkey tracking, cultural tours, and more. Over 11 unique adventures to choose from.',
@@ -251,7 +262,7 @@ const HomePage: React.FC = () => {
                 color: 'success',
               },
               {
-                icon: '🏨',
+                icon: <FaHotel />,
                 title: 'Accommodation',
                 description:
                   'Luxury lodges, eco camps, and budget hostels near Bwindi, Lake Mutanda, and Kisoro town. Low season and bundle discounts available.',
@@ -260,7 +271,7 @@ const HomePage: React.FC = () => {
                 color: 'warning',
               },
               {
-                icon: '🚗',
+                icon: <FaCar />,
                 title: 'Transport',
                 description:
                   '4x4 safari cars, boda-boda motorcycles, and boat transport. Airport transfers from Entebbe, Kampala, and Kigali.',
@@ -272,7 +283,7 @@ const HomePage: React.FC = () => {
               <Col lg={4} md={6} key={index}>
                 <Card className="border-0 shadow-sm h-100 rounded-3 text-center p-3">
                   <Card.Body className="d-flex flex-column">
-                    <div className="fs-1 mb-3">{item.icon}</div>
+                    <div className="fs-1 mb-3 text-success">{item.icon}</div>
                     <Card.Title className="fw-bold mb-3">{item.title}</Card.Title>
                     <Card.Text className="text-muted small flex-grow-1">{item.description}</Card.Text>
                     <Link

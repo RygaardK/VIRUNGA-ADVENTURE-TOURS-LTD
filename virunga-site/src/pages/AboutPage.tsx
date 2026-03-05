@@ -1,6 +1,6 @@
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { FiHeart, FiTarget, FiGlobe, FiUsers } from 'react-icons/fi';
+import { FiHeart, FiTarget, FiGlobe, FiUsers, FiMapPin, FiPhone, FiMail } from 'react-icons/fi';
 import SEOHead from '../components/SEOHead';
 import BookingCTA from '../components/BookingCTA';
 import { COMPANY_INFO } from '../data/experiences';
@@ -184,9 +184,9 @@ const AboutPage: React.FC = () => {
                 or elsewhere, we can help arrange your transport and logistics.
               </p>
               <ul className="list-unstyled">
-                <li className="mb-2">📍 <strong>Address:</strong> {COMPANY_INFO.address}</li>
-                <li className="mb-2">📞 <strong>Phone:</strong> {COMPANY_INFO.phone}</li>
-                <li className="mb-2">✉️ <strong>Email:</strong> {COMPANY_INFO.email}</li>
+                <li className="mb-2 d-flex align-items-center gap-2"><FiMapPin className="text-success" /> <strong>Address:</strong> {COMPANY_INFO.address}</li>
+                <li className="mb-2 d-flex align-items-center gap-2"><FiPhone className="text-success" /> <strong>Phone:</strong> {COMPANY_INFO.phone}</li>
+                <li className="mb-2 d-flex align-items-center gap-2"><FiMail className="text-success" /> <strong>Email:</strong> {COMPANY_INFO.email}</li>
               </ul>
             </Col>
             <Col lg={6}>

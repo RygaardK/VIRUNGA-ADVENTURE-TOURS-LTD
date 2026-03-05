@@ -1,8 +1,16 @@
 import { Container, Row, Col, Card, Table } from 'react-bootstrap';
+import { FaMotorcycle, FaCar, FaShip, FaCheck, FaTimes } from 'react-icons/fa';
 import SEOHead from '../components/SEOHead';
 import TransportCard from '../components/TransportCard';
 import BookingCTA from '../components/BookingCTA';
+import WhatsAppButton, { whatsappMessages } from '../components/WhatsAppButton';
 import { transportServices, airportTransfers, transportDescription } from '../data/transport';
+
+const transportIconMap: Record<string, React.ReactNode> = {
+  motorcycle: <FaMotorcycle />,
+  car: <FaCar />,
+  ship: <FaShip />,
+};
 
 const TransportPage: React.FC = () => {
   return (
@@ -112,7 +120,7 @@ const TransportPage: React.FC = () => {
                     <tr>
                       <th className="text-start">Feature</th>
                       {transportServices.map((t) => (
-                        <th key={t.id}>{t.icon} {t.name.split(' ')[0]}</th>
+                        <th key={t.id}>{transportIconMap[t.icon] || t.icon} {t.name.split(' ')[0]}</th>
                       ))}
                     </tr>
                   </thead>
@@ -126,25 +134,25 @@ const TransportPage: React.FC = () => {
                     <tr>
                       <td className="text-start fw-medium">Fuel Included</td>
                       {transportServices.map((t) => (
-                        <td key={t.id}>{t.fuelIncluded ? '✅' : '❌'}</td>
+                        <td key={t.id}>{t.fuelIncluded ? <FaCheck className="text-success" /> : <FaTimes className="text-danger" />}</td>
                       ))}
                     </tr>
                     <tr>
                       <td className="text-start fw-medium">English Driver</td>
                       {transportServices.map((t) => (
-                        <td key={t.id}>{t.englishDriver ? '✅' : '❌'}</td>
+                        <td key={t.id}>{t.englishDriver ? <FaCheck className="text-success" /> : <FaTimes className="text-danger" />}</td>
                       ))}
                     </tr>
                     <tr>
                       <td className="text-start fw-medium">Cross-Border</td>
                       {transportServices.map((t) => (
-                        <td key={t.id}>{t.crossBorder ? '✅' : '❌'}</td>
+                        <td key={t.id}>{t.crossBorder ? <FaCheck className="text-success" /> : <FaTimes className="text-danger" />}</td>
                       ))}
                     </tr>
                     <tr>
                       <td className="text-start fw-medium">Airport Pickup</td>
                       {transportServices.map((t) => (
-                        <td key={t.id}>{t.airportPickup.length > 0 ? '✅' : '❌'}</td>
+                        <td key={t.id}>{t.airportPickup.length > 0 ? <FaCheck className="text-success" /> : <FaTimes className="text-danger" />}</td>
                       ))}
                     </tr>
                     <tr>
@@ -158,6 +166,21 @@ const TransportPage: React.FC = () => {
               </Card>
             </Col>
           </Row>
+        </Container>
+      </section>
+
+      {/* WhatsApp CTA */}
+      <section className="py-5">
+        <Container className="text-center">
+          <h3 className="fw-bold mb-3">Need Help Choosing?</h3>
+          <p className="text-muted mb-4 mx-auto" style={{ maxWidth: '500px' }}>
+            Message us on WhatsApp and we will recommend the best transport option for your trip.
+          </p>
+          <WhatsAppButton
+            message={whatsappMessages.transport('the best')}
+            label="Ask About Transport"
+            size="lg"
+          />
         </Container>
       </section>
 

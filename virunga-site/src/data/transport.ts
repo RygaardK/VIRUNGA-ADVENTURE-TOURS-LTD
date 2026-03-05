@@ -41,7 +41,7 @@ export const transportServices: TransportService[] = [
     slug: 'bodaboda-motorcycle-transport',
     name: 'Boda-Boda Motorcycle Transport',
     type: 'bodaboda',
-    icon: '🏍️',
+    icon: 'motorcycle',
     description:
       'Fast and affordable motorcycle transport for short trips around Kisoro and to nearby attractions. The most popular local transport option for quick, flexible travel.',
     longDescription: `Boda-boda motorcycles are the heartbeat of transport in Kisoro and across rural Uganda. These motorcycle taxis are the fastest and most affordable way to travel short to medium distances, navigating narrow roads and hillside paths that larger vehicles cannot reach.
@@ -100,7 +100,7 @@ Note: Boda-boda transport is not available for cross-border travel to Rwanda.`,
     slug: '4x4-safari-car-with-driver',
     name: '4x4 Safari Car with Driver',
     type: '4x4_car',
-    icon: '🚙',
+    icon: 'car',
     description:
       'Comfortable, reliable 4x4 safari vehicles with experienced English-speaking drivers. Perfect for airport transfers, multi-day tours, and cross-border travel between Uganda and Rwanda.',
     longDescription: `Our 4x4 safari vehicles are the premium transport choice for travellers who want comfort, reliability, and flexibility. Each vehicle comes with an experienced, English-speaking driver who doubles as a knowledgeable local guide.
@@ -167,7 +167,7 @@ All prices include fuel, driver accommodation and meals, and vehicle insurance. 
     slug: 'boat-transport-lake-mutanda',
     name: 'Boat Transport on Lake Mutanda',
     type: 'boat',
-    icon: '🚤',
+    icon: 'ship',
     description:
       'Travel by boat across the beautiful waters of Lake Mutanda. Scenic water transport with experienced captains, perfect for reaching lakeside lodges and exploring the islands.',
     longDescription: `Lake Mutanda is one of Uganda's most beautiful lakes, and our boat transport service lets you experience it from the water. Whether you need practical transport to a lakeside lodge or want to combine travel with sightseeing, our boats offer a unique and memorable way to get around.
