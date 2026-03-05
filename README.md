@@ -1,73 +1,99 @@
-# React + TypeScript + Vite
+# Virunga Adventure Tours
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tourism website for **Virunga Adventure Tours Ltd** — Kisoro, Uganda.
 
-Currently, two official plugins are available:
+Gorilla trekking, volcano hiking, golden monkey tracking, cultural tours, and more around Bwindi Impenetrable National Park, Mgahinga Gorilla National Park, and Lake Mutanda.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## React Compiler
+- React 19 + TypeScript
+- Bootstrap 5 / React-Bootstrap
+- Vite
+- React Router (client-side routing)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173) to view the site locally.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Build for Production
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+Output goes to the `dist/` folder.
+
+## Deploy to GitHub Pages
+
+This project is configured for automatic deployment to GitHub Pages via GitHub Actions.
+
+### Steps
+
+1. **Push your code** to the `main` branch on GitHub.
+
+2. **Enable GitHub Pages** in your repository:
+   - Go to **Settings → Pages**
+   - Under **Source**, select **GitHub Actions**
+
+3. The workflow at `.github/workflows/deploy.yml` will automatically build and deploy on every push to `main`.
+
+4. Your site will be available at:
+   ```
+   https://<your-username>.github.io/<repo-name>/
+   ```
+
+### Custom Domain (optional)
+
+If you want to use a custom domain like `virungaadventuretours.com`:
+
+1. In **Settings → Pages**, enter your custom domain.
+2. Create a `CNAME` file in the `public/` folder with your domain:
+   ```
+   virungaadventuretours.com
+   ```
+3. Set up DNS records with your domain provider:
+   - **A records** pointing to GitHub Pages IPs:
+     ```
+     185.199.108.153
+     185.199.109.153
+     185.199.110.153
+     185.199.111.153
+     ```
+   - Or a **CNAME record** pointing `www` to `<your-username>.github.io`
+4. Enable **Enforce HTTPS** in the Pages settings.
+
+### Deploying to a Subdirectory
+
+If your site is deployed to `https://<user>.github.io/<repo-name>/`, update the `base` in `vite.config.ts`:
+
+```ts
+export default defineConfig({
+  plugins: [react()],
+  base: '/<repo-name>/',
+})
+```
+
+### SPA Routing
+
+GitHub Pages doesn't natively support single-page app routing. This project includes a `404.html` redirect trick so that routes like `/experiences/gorilla-trekking` work correctly.
+
+## Project Structure
+
+```
+src/
+  components/   — Reusable UI components
+  data/         — Static tourism data (experiences, accommodation, transport, packages)
+  pages/        — Route-level page components
+public/
+  images/       — Static images
+  404.html      — SPA routing fallback for GitHub Pages
+```
+
+## License
+
+© Virunga Adventure Tours Ltd. All rights reserved.
